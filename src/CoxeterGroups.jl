@@ -170,7 +170,7 @@ function longest_element(grp::CoxGrp)
     w = one(grp)
     while true
         finished = true
-        for i in 1:rank(grp)
+        for s in 1:rank(grp)
             if !is_right_descent(w, s)
                 w = right_multiply(w, s)
                 finished = false

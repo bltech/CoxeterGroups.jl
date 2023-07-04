@@ -58,7 +58,7 @@ function coxeter_group_min(mat::AbstractArray{T}) where T <: Integer
     # their simple roots to negative. If there are more than rank zeros, then there are some non-minimal
     # positive roots, and the resulting group is infinite.
     rank, _ = size(coxeter_mat)
-    is_finite = count(x -> x == 0, refl_table) > rank
+    is_finite = count(x -> x == 0, refl_table) <= rank
     G = CoxGrpMin(coxeter_mat, refl_table, is_finite)
     return G, generators(G)
 end
